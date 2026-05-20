@@ -1,0 +1,44 @@
+#!/bin/bash
+#fourth session for the shell scripting practise
+#lets see how good i can make it
+
+echo
+echo "=========== Welcome to the information center ======="
+echo
+echo "Please select one of the followings to proceed."
+echo
+echo "a)Basics information"
+echo "b)Intermdediate information"
+echo "c)Advanced information"
+echo
+read choice
+case $choice in
+
+	a)echo "Please select one of the following"
+	echo "1=Hostname"
+	echo "2=Date & Time"
+	echo "3=Working directory"
+
+	read option
+case $option in
+	1)hostname;;
+	2)date;;
+	3)pwd;;
+
+esac
+;;
+
+b)	echo "Please select one of the following"
+	echo "1=Ip address"
+	echo "2=Check connection to internet"
+	echo "3=Check disk usage"
+
+read op
+case $op in
+
+	1)ip addr show;;
+	2)ping -c 2 google.com;;
+	3)df -h;;
+
+esac
+esac
