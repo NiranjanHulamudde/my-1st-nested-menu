@@ -5,10 +5,10 @@
 echo
 echo "=========== Welcome to the information center ======="
 echo
-echo "Please select one of the followings to proceed."
+echo "Please select one of the following to proceed."
 echo
 echo "a)Basics information"
-echo "b)Intermdediate information"
+echo "b)Interediate information"
 echo "c)Advanced information"
 echo
 
@@ -20,19 +20,19 @@ a)
 	echo "1=Hostname"
 	echo "2=Date & Time"
 	echo "3=Working directory"
+	echo "4=Exit"	
 	
-	read option
+ 
+read option
 case $option in
 	1)hostname;;
 	2)date;;
 	3)pwd;;
-	*)echo "Please try again from the available options"
-		
+	4)echo "Exiting ..." 
+		;;
 esac
 ;;
-
-b)
-	echo "Please select one of the following"
+b)	echo "Please select one of the following"
 	echo "1=Ip address"
 	echo "2=Check connection to internet"
 	echo "3=Check disk usage"
@@ -42,10 +42,10 @@ b)
 		2)ping -c 2 google.com;;
 		3)df -h;;
 		*)echo "Please try again from the available options" ;;
-	
+		
 	esac
+;;
 
-	;;
 
 c) 	echo "Please select one of the following"
 	echo "1=Active sockets per page"
@@ -55,11 +55,16 @@ c) 	echo "Please select one of the following"
 	read adv
 	case $adv in
 		1)ss | more ;;
-		2)traceroute;;
+		2)
+		echo "Please enter the ip/hostname"
+		read ip
+		traceroute $ip ;;
 		3)git status;;
 		*)echo "Please try again from the available options" 
 	esac ;;
 
 *)echo "Please try again from the available options" 
-
+	break 
+	;;
 esac 	
+
