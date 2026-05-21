@@ -2,6 +2,9 @@
 #fourth session for the shell scripting practise
 #lets see how good i can make it
 
+
+while true
+do
 echo
 echo "=========== Welcome to the information center ======="
 echo
@@ -10,6 +13,7 @@ echo
 echo "a)Basics information"
 echo "b)Intermdediate information"
 echo "c)Advanced information"
+echo "d)Exit"
 echo
 
 read choice
@@ -63,3 +67,4 @@ c) 	echo "Please select one of the following"
 *)echo "Please try again from the available options" 
 
 esac 	
+done
